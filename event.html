@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="input-para">Default Text</p>
+    <input type="text" name="" id="input-text">
+    <button id="submit-button">Submit</button>
+
+    <br>
+    <br>
+    <br>
+
+
+    <h1 id="title">Hello please change me</h1>
+    <button onclick="handleOnClick()">Click me to change the title</button>
+
+    <button id="change-title">Click me to simply change the title</button>
+    <script>
+        function handleOnClick(){
+            document.getElementById('title').innerText = 'Changed successfully';
+        }
+
+        document.getElementById('change-title').addEventListener('click', function(){
+            document.getElementById("title").innerText = "changed by eventlistener";
+        })
+
+        document.getElementById("submit-button").addEventListener("click", function(){
+            const inputField = document.getElementById("input-text");
+            const inputText = inputField.value;
+            document.getElementById("input-para").innerText = inputText;
+            inputField.value = "";
+        })
+    </script>
+</body>
+</html>
